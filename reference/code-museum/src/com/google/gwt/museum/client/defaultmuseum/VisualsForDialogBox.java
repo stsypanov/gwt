@@ -31,6 +31,7 @@ import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -46,7 +47,7 @@ public class VisualsForDialogBox extends AbstractIssue {
   private final class VisibleDialogBox extends DialogBox {
     private FlexTable layout = null;
 
-    private final Map<VisibleEvents, Element> eventToElement = new HashMap<VisibleEvents, Element>();
+    private final Map<VisibleEvents, Element> eventToElement = new EnumMap<VisibleEvents, Element>(VisibleEvents.class);
 
     private boolean maybeClose;
 

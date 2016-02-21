@@ -24,6 +24,7 @@ import java.awt.EventQueue;
 import java.net.URL;
 import java.text.NumberFormat;
 import java.util.Date;
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,8 +44,8 @@ public final class SwingTreeLogger extends AbstractTreeLogger {
 
     private static final Color DEBUG_COLOR = Color.decode("0x007777");
     private static final Date firstLog = new Date();
-    private static final Map<Type, Color> logColors = new HashMap<Type, Color>();
-    private static final Map<Type, Icon> logIcons = new HashMap<Type, Icon>();
+    private static final Map<Type, Color> logColors = new EnumMap<Type, Color>(Type.class);
+    private static final Map<Type, Icon> logIcons = new EnumMap<Type, Icon>(Type.class);
     private static NumberFormat minHr = NumberFormat.getIntegerInstance();
     private static NumberFormat seconds = NumberFormat.getNumberInstance();
     private static final Color SPAM_COLOR = Color.decode("0x005500");

@@ -26,7 +26,7 @@ import com.google.gwt.user.client.ui.MouseListener;
 import com.google.gwt.user.client.ui.MouseListenerCollection;
 import com.google.gwt.user.client.ui.Widget;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 
 /**
@@ -135,7 +135,7 @@ public class Issue3186 extends AbstractIssue {
 
     private Control control = new Control();
     private Current current = new Current();
-    private final Map<VisibleEvents, Element> eventToElement = new HashMap<VisibleEvents, Element>();
+    private final Map<VisibleEvents, Element> eventToElement = new EnumMap<VisibleEvents, Element>(VisibleEvents.class);
 
     public TestWidget() {
       layout = new FlexTable();

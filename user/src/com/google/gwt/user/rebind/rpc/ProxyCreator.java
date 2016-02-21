@@ -73,12 +73,7 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Creates a client-side proxy for a
@@ -110,7 +105,7 @@ public class ProxyCreator {
   private static final String PROXY_SUFFIX = "_Proxy";
 
   private static final Map<JPrimitiveType, ResponseReader> JPRIMITIVETYPE_TO_RESPONSEREADER =
-      new HashMap<JPrimitiveType, ResponseReader>();
+      new EnumMap<JPrimitiveType, ResponseReader>(JPrimitiveType.class);
   static {
     JPRIMITIVETYPE_TO_RESPONSEREADER.put(JPrimitiveType.BOOLEAN, ResponseReader.BOOLEAN);
     JPRIMITIVETYPE_TO_RESPONSEREADER.put(JPrimitiveType.BYTE, ResponseReader.BYTE);
